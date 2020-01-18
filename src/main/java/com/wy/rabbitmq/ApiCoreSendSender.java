@@ -12,6 +12,7 @@ public class ApiCoreSendSender {
 
     public void user(String msg){
       System.err.println("api.core.user send message: "+msg);
+
       amqpTemplate.convertAndSend("coreExchange","api.core.user",msg);
     }
 
